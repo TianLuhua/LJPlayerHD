@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#10000000"
+    android:padding="5dp" >
+
+    <ListView
+        android:id="@+id/dmr_selected_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:divider="@drawable/playing_list_divider"
+        android:scrollbars="none" >
+    </ListView>
+
+</LinearLayout>

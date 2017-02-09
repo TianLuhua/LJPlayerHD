@@ -1,0 +1,119 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="Fragment_Personal_Center_B">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">0.5dp</item>
+        <item name="android:layout_marginTop">0.5dp</item>
+        <item name="android:background">#619EE4</item>
+        <item name="android:drawableRight">@android:drawable/sym_action_chat</item>
+    </style>
+
+    <style name="MyRadioButton">
+        <item name="android:button">@null</item>
+        <item name="android:drawableLeft">@drawable/radio_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/video_order_textSize</item>
+        <item name="android:paddingTop">@dimen/video_order_radio_padding</item>
+        <item name="android:paddingBottom">@dimen/video_order_radio_padding</item>
+        <item name="android:drawablePadding">@dimen/video_order_radio_drawablePadding</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Fragment_Personal_Center_M">
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="AppTheme.Common" />
+
+    <style name="AppTheme.Common.Launch">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MatchParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MatchParent.Weight">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="MatchParent.Weight.Height">
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="MatchParent.Weight.Width">
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapContent.WidthMatchParent">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="WrapContent.HeightMatchParent">
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="WrapContent.AdjustViewBoundsFalse">
+        <item name="android:adjustViewBounds">false</item>
+    </style>
+
+    <style name="ButtonWrapContent" parent="@style/Widget.AppCompat.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+
+    <style name="ProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal" />
+
+    <style name="ProgressBar.WrapContentHeight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ButtonWrapContent.WidthMatch">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="EditTextMd" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="EditTextMd.WidthMatch">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="AppTheme_Dark_Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+</resources>

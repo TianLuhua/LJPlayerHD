@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.lj.ljplayerhd.media.category.CategoryPresenter"></variable>
+    </data>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:orientation="vertical"
+        android:onCheckedChanged="@{(group,id) -> presenter.onOrderChanged(id)}"
+        android:paddingBottom="@dimen/video_order_paddingTop"
+        android:paddingLeft="@dimen/video_order_paddingRight"
+        android:paddingRight="@dimen/video_order_paddingRight"
+        android:paddingTop="@dimen/video_order_paddingTop">
+
+        <RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/time"
+            style="@style/MyRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recent_update"></RadioButton>
+
+        <RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/hits"
+            style="@style/MyRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recent_hit">
+
+        </RadioButton>
+
+        <RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rating"
+            style="@style/MyRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_films"></RadioButton>
+
+
+        <RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/effect"
+            style="@style/MyRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_rated"></RadioButton>
+    </RadioGroup>
+</layout>

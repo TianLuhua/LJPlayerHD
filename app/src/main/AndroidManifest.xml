@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lj.ljplayerhd"
+    android:versionCode="1008"
+    android:versionName="1.0.8">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".LJApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".main.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:windowSoftInputMode="adjustPan">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".media.details.VideoDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
+
+        <activity
+            android:name=".media.category.CategoryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
+
+        <activity
+            android:name=".main.search.SearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
+
+        <activity
+            android:name=".media.comment.CommentActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
+
+        <activity
+            android:name=".media.player.FullScreenPlayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light"></activity>
+
+        <service
+            android:name=".main.offline.download.DownLoadService"
+            android:enabled="true">
+            <intent-filte android:priority="1000"></intent-filte>
+        </service>
+
+
+        <activity
+            android:name=".main.offline.dlna.ImageControllerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".main.offline.dlna.MusicControllerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".main.offline.dlna.VideoControllerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+        <service
+            android:name=".main.offline.dlna.server.DMSService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.geniusgithub.start.dmsengine" />
+                <action android:name="com.geniusgithub.restart.dmsengine" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".main.offline.dlna.server.DlnaService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.geniusgithub.allshare.search_device" />
+                <action android:name="com.geniusgithub.allshare.reset_search_device" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchParent"
+    android:background="@color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        style="@style/WrapContent.WidthMatchParent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            style="@style/WrapContent.WidthMatchParent"
+            app:layout_scrollFlags="scroll|snap|enterAlwaysCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_user_centre_head_background"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/head_logo"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.9" />
+
+            <LinearLayout
+                android:id="@+id/layout_start_title_root"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_gravity="bottom"
+                android:background="@color/colorPrimaryTransparent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.3">
+
+                <TextView
+                    android:id="@+id/personalfragment_collection"
+                    style="@style/Fragment_Personal_Center_M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/personal_collection"
+                    android:text="@string/collection" />
+
+                <TextView
+                    android:id="@+id/personalfragment_cache"
+                    style="@style/Fragment_Personal_Center_M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/personal_cache"
+                    android:text="@string/cache" />
+
+                <TextView
+                    android:id="@+id/personalfragment_histroy"
+                    style="@style/Fragment_Personal_Center_M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/personal_history"
+                    android:text="@string/history" />
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_start_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_start"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_anchor="@id/layout_start_title_root"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <LinearLayout
+            style="@style/WrapContent.HeightMatchParent"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize" />
+
+            <TextView
+                android:id="@+id/tv_start_toolbar_title"
+                style="@style/WrapContent.HeightMatchParent"
+                android:gravity="center_vertical"
+                android:text="@string/fragment_personla"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_user_centre_user_head"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/information_personal"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="@dimen/dp_2"
+        app:finalHeight="@dimen/dp_40"
+        app:layout_behavior="@string/behavior_user_head_move" />
+
+</android.support.design.widget.CoordinatorLayout>

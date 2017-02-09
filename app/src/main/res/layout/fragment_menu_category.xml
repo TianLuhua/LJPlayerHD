@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.example.lj.ljplayerhd.widget.View_CategoryTableLayout
+        android:id="@+id/categoryTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:clickable="true"
+        android:padding="@dimen/video_category_padding">
+    </com.example.lj.ljplayerhd.widget.View_CategoryTableLayout>
+
+</layout>

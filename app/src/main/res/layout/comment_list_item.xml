@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.example.lj.ljplayerhd.bean.CommentBean.PagecontentBean"></variable>
+    </data>
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_2"
+            android:background="@android:color/darker_gray">
+
+            <RelativeLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/comment_img"
+                    android:layout_width="@dimen/comment_avatar_width"
+                    android:layout_height="@dimen/comment_avatar_width"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/comment_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/play_detail_comment_name_marginLeft"
+                    android:layout_marginRight="@dimen/play_detail_comment_name_marginLeft"
+                    android:layout_toRightOf="@+id/comment_img"
+                    android:text="@{bean.username}"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/play_detail_divither_margin"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/post_at"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/comment_name"
+                    android:text="@string/play_comment_post_at"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/comment_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/play_detail_comment_name_marginLeft"
+                    android:layout_toLeftOf="@+id/comment_line"
+                    android:layout_toRightOf="@+id/post_at"
+                    android:text="@{bean.dateline}"
+                    android:lines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/play_detail_comment_time_textSize" />
+
+                <TextView
+                    android:id="@+id/comment_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:text="@{bean.listid}"
+                    android:lines="1"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/play_detail_comment_time_textSize" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/comment_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_top"
+                android:layout_marginLeft="@dimen/play_detail_comment_content_marginLeft"
+                android:layout_marginTop="@dimen/play_detail_comment_content_marginTop"
+                android:text="@{bean.content}"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/play_detail_divither_margin"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</layout>

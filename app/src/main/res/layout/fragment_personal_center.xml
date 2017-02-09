@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/fragment_persnoal_center_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff00ff00"
+        android:orientation="vertical">
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_head"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:gravity="center"
+            android:padding="40dp"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="#ff00"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_shop"
+            style="@style/Fragment_Personal_Center_M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_collection"
+            style="@style/Fragment_Personal_Center_M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_cache"
+            style="@style/Fragment_Personal_Center_M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_histroy"
+            style="@style/Fragment_Personal_Center_M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTop="@mipmap/ic_launcher"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0"
+        android:orientation="vertical">
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_operation_help"
+            style="@style/Fragment_Personal_Center_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="@string/item" />
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_contact_us"
+            style="@style/Fragment_Personal_Center_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="@string/item" />
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_system_settings"
+            style="@style/Fragment_Personal_Center_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="@string/item" />
+
+        <TextView
+            android:onClick="personalfragment_operation"
+            android:id="@+id/personalfragment_Version_update"
+            style="@style/Fragment_Personal_Center_B"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:text="@string/item" />
+    </LinearLayout>
+</LinearLayout>

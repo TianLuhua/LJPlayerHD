@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.lj.ljplayerhd.widget.View_VideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/video_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="default"/>
+
+            <Button
+                android:id="@+id/video_double"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="double"/>
+
+            <Button
+                android:id="@+id/video_half"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="half"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

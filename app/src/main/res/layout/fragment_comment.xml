@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <variable
+            name="presenter"
+            type="com.example.lj.ljplayerhd.media.comment.CommentPresenter"></variable>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_bar_height"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:onClick="@{(v) ->presenter.back()}"
+                android:paddingLeft="@dimen/title_bar_back_padding_left"
+                android:paddingRight="@dimen/title_bar_back_padding_right"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/sp_18" />
+
+        </RelativeLayout>
+
+        <com.aspsine.swipetoloadlayout.SwipeToLoadLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/load_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:default_to_loading_more_scrolling_duration="500"
+            app:load_more_complete_delay_duration="0"
+            app:load_more_final_drag_offset="@dimen/load_more_final_offset_google"
+            app:load_more_trigger_offset="@dimen/load_more_trigger_offset_google"
+            app:refresh_final_drag_offset="@dimen/refresh_final_offset_google"
+            app:refresh_trigger_offset="@dimen/refresh_trigger_offset_google"
+            app:swipe_style="above">
+
+            <com.example.lj.ljplayerhd.widget.SwipeToLoadRecyclerView
+                android:id="@+id/swipe_target"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:scrollbars="vertical">
+            </com.example.lj.ljplayerhd.widget.SwipeToLoadRecyclerView>
+
+            <include
+                android:id="@id/swipe_load_more_footer"
+                layout="@layout/layout_load_more_footer" />
+
+        </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/media_control_title"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="title"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/media_control_bk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/music_controller_bk" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <SeekBar
+            android:id="@+id/sb_voice"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:focusable="true"
+            android:maxHeight="7.0dip"
+            android:minHeight="7.0dip" />
+
+        <FrameLayout
+            android:id="@+id/fl_volume"
+            android:layout_width="31dp"
+            android:layout_height="20.77dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/sb_voice"
+            android:onClick="setMute">
+
+            <ImageView
+                android:id="@+id/iv_volume"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dip"
+                android:src="@drawable/volume_must" />
+
+            <ImageView
+                android:id="@+id/iv_mute"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dip"
+                android:src="@drawable/volume_no_selected"
+                android:visibility="gone" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp">
+
+        <TextView
+            android:id="@+id/media_control_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="00:00:00" />
+
+        <SeekBar
+            android:id="@+id/media_control_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:maxHeight="55.0dip"
+            android:minHeight="55.0dip"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip"
+        />
+
+        <TextView
+            android:id="@+id/media_control_currtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="00:00:00" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/icon_play_prev_normal"
+            android:clickable="true"
+            android:onClick="previous" />
+
+        <Button
+            android:id="@+id/media_control_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_pause_n"
+            android:clickable="true"
+            android:onClick="doResumePlay" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/icon_play_next_normal"
+            android:clickable="true"
+            android:onClick="next" />
+    </RelativeLayout>
+
+</LinearLayout>
