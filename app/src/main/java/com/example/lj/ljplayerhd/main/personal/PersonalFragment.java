@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CursorAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lj.ljplayerhd.R;
@@ -19,16 +21,20 @@ import com.example.lj.ljplayerhd.main.personal.adapter.RecyclerListMultiAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by Administrator on 2016/11/20 0020.
  */
 
-public class PersonalFragment extends BaseFragment {
+public class PersonalFragment extends BaseFragment implements PersonalFragmentContract.View, View.OnClickListener {
 
-    AppBarLayout mAppBarLayout;
-    Toolbar mToolbar;
-    ViewGroup mTitleContainerLine;
-    TextView mTvTitleToolbar;
+    private AppBarLayout mAppBarLayout;
+    private Toolbar mToolbar;
+    private ViewGroup mTitleContainerLine;
+    private TextView mTvTitleToolbar;
+    private CircleImageView customeHead;
+    private PersonalFragmentContract.Presenter presenter;
 
     @Override
     public int getLayoutId() {
@@ -40,8 +46,9 @@ public class PersonalFragment extends BaseFragment {
         mAppBarLayout = (AppBarLayout) root.findViewById(R.id.app_bar_layout);
         mToolbar = (Toolbar) root.findViewById(R.id.toolbar_start);
         mTitleContainerLine = (ViewGroup) root.findViewById(R.id.layout_start_title_root);
+        customeHead = (CircleImageView) root.findViewById(R.id.iv_user_centre_user_head);
+        customeHead.setOnClickListener(this);
         mTvTitleToolbar = (TextView) root.findViewById(R.id.tv_start_toolbar_title);
-
         mAppBarLayout.addOnOffsetChangedListener(offsetChangedListener);
         initialize();
 
@@ -58,6 +65,7 @@ public class PersonalFragment extends BaseFragment {
 
     @Override
     public void initEvents() {
+        new PersonalFragmentPresenter(this,getActivity());
 
     }
 
@@ -81,4 +89,17 @@ public class PersonalFragment extends BaseFragment {
     };
 
 
+    @Override
+    public void setPresenter(PersonalFragmentContract.Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.iv_user_centre_user_head:
+                presenter.gotoLoginActivity();
+                break;
+        }
+    }
 }

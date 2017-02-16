@@ -21,7 +21,7 @@
     <application
         android:name=".LJApplication"
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -72,6 +72,15 @@
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light"></activity>
+        <activity
+            android:name=".main.personal.Login.LoginActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="LJ.action.login" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".main.offline.download.DownLoadService"

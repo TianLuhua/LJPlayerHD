@@ -41,7 +41,6 @@ public class RecyclerListMultiAdapter extends RecyclerView.Adapter<RecyclerListM
     public void onBindViewHolder(TextViewHolder holder, int position) {
         holder.mTextView.setText(titles[position]);
         SLogUtil.e("info", "----------:" + iocs.length);
-//        holder.mTextView.setCompoundDrawablesWithIntrinsicBounds(iocs[position], 0, 0, 0);
         holder.mTextView.setCompoundDrawablesRelativeWithIntrinsicBounds(iocs[position], 0, 0, 0);
     }
 
