@@ -77,7 +77,7 @@ public class LocalFragment extends BaseFragment implements LocalFragmentContract
     @Override
     public void initEvents() {
         this.mContext = getActivity();
-        presenter = new LocalFragmentPresenter(this,getActivity());
+        presenter = new LocalFragmentPresenter(this, getActivity());
         rsTask();
 
     }
@@ -89,7 +89,8 @@ public class LocalFragment extends BaseFragment implements LocalFragmentContract
 
     @Override
     public void updateData(List<LocalVedio> localVedios) {
-        localRecyclerView.setAdapter(new LocalFragmentAdapter(localVedios, (LocalFragmentPresenter) presenter));
+        if (localRecyclerView != null)
+            localRecyclerView.setAdapter(new LocalFragmentAdapter(localVedios, (LocalFragmentPresenter) presenter));
     }
 
     @Override
@@ -139,5 +140,12 @@ public class LocalFragment extends BaseFragment implements LocalFragmentContract
             EasyPermissions.requestPermissions(this, getString(R.string.rationale_sms),
                     LOCALFRAGMENT_WRITE_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (presenter != null)
+            presenter = null;
     }
 }
